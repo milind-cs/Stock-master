@@ -1,82 +1,58 @@
 import streamlit as st
+import plotly.graph_objects as go
 
+# Page configuration
 st.set_page_config(
-    page_title="Stock Prediction App",
-    page_icon=":stocks:",
+    page_title="Stock Master: Your ML-Powered Stock Predictor",
+    page_icon="📈",
+    layout="wide"
 )
 
+# Title and subtitle
+st.title("Stock Master: Your ML-Powered Stock Predictor")
+st.markdown("#### Transforming Stock Predictions with Machine Learning")
 
-# st.markdown(
-#     """# 📈 **Stockastic**
-# ### **Predicting Stocks with ML**
+# Introduction
+st.header("Welcome to Stock Master! 📈")
+st.markdown("""
+Discover the power of machine learning in stock price prediction with **Stock Master**. This app leverages cutting-edge ML models to forecast stock prices, providing you with the insights needed to make informed investment decisions.
+""")
 
-# **Stockastic is an ML-powered stock price prediction app built with Python and Streamlit. It utilizes machine learning models to forecast stock prices and help investors make data-driven decisions.**
+# How It's Built section
+st.header("Under the Hood of Stock Master 🏗️")
+st.markdown("""
+Stock Master is engineered with a robust stack of tools and technologies:
 
-# ## 🏗️ **How It's Built**
+- **Streamlit**: Crafts a seamless and interactive user interface.
+- **YFinance**: Fetches comprehensive financial data from the Yahoo Finance API.
+- **StatsModels**: Builds and fine-tunes the ARIMA time series forecasting model.
+- **Plotly**: Generates dynamic and interactive financial charts.
 
-# Stockastic is built with these core frameworks and modules:
+### App Workflow:
 
-# - **Streamlit** - To create the web app UI and interactivity 
-# - **YFinance** - To fetch financial data from Yahoo Finance API
-# - **StatsModels** - To build the ARIMA time series forecasting model
-# - **Plotly** - To create interactive financial charts
+1. **Select a Stock Ticker**: Choose the stock you're interested in.
+2. **Data Retrieval**: Historical data is fetched from Yahoo Finance.
+3. **Model Training**: The ARIMA model is trained on the historical data.
+4. **Forecast Generation**: The model predicts future stock prices.
+5. **Visualization**: Forecasts and historical data are plotted with Plotly for easy interpretation.
+""")
 
-# The app workflow is:
+# Key Features section
+st.header("Key Features of Stock Master 🎯")
+st.markdown("""
+- **Real-Time Data**: Access up-to-the-minute stock prices and financial metrics.
+- **Interactive Charts**: Explore historical trends and future forecasts with interactive visualizations.
+- **Robust Predictions**: Utilize ARIMA for reliable and statistically sound forecasting.
+- **Performance Evaluation**: Backtest models to evaluate prediction accuracy.
+- **Mobile-Friendly Design**: Experience a responsive design that works seamlessly across all devices.
+""")
 
-# 1. User selects a stock ticker
-# 2. Historical data is fetched with YFinance
-# 3. ARIMA model is trained on the data 
-# 4. Model makes multi-day price forecasts
-# 5. Results are plotted with Plotly
+# Example Plot (Optional)
+st.header("Explore an Example Plot")
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=["2023-01-01", "2023-01-02", "2023-01-03"], y=[100, 101, 102], mode='lines', name='Stock Price'))
+fig.update_layout(title='Example Stock Price Movement', xaxis_title='Date', yaxis_title='Price')
+st.plotly_chart(fig)
 
-# ## 🎯 **Key Features**
-
-# - **Real-time data** - Fetch latest prices and fundamentals 
-# - **Financial charts** - Interactive historical and forecast charts
-# - **ARIMA forecasting** - Make statistically robust predictions
-# - **Backtesting** - Evaluate model performance
-# - **Responsive design** - Works on all devices
-
-# ## 🚀 **Getting Started**
-
-# ### **Local Installation**
-
-# 1. Clone the repo
-
-# ```bash
-# git clone https://github.com/user/stockastic.git
-# ```
-
-# 2. Install requirements
-
-# ```bash
-# pip install -r requirements.txt
-# ```
-
-# 3. Change directory
-# ```bash
-# cd streamlit_app
-# ```
-
-# 4. Run the app
-
-# ```bash
-# streamlit run 00_😎_Main.py
-# ```
-
-# The app will be live at ```http://localhost:8501```
-
-# ## 📈 **Future Roadmap**
-
-# Some potential features for future releases:
-
-# - **More advanced forecasting models like LSTM**
-# - **Quantitative trading strategies**
-# - **Portfolio optimization and tracking**
-# - **Additional fundamental data**
-# - **User account system**
-
-# ## **⚖️ Disclaimer**
-# **This is not financial advice! Use forecast data to inform your own investment research. No guarantee of trading performance.**
-# """
-# )
+# Call to Action
+st.markdown("**Ready to see the future of your favorite stocks? Select a stock ticker from the sidebar and let Stock Master do the rest!**")
