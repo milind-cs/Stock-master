@@ -47,12 +47,5 @@ st.markdown("""
 - **Mobile-Friendly Design**: Experience a responsive design that works seamlessly across all devices.
 """)
 
-# Example Plot (Optional)
-st.header("Explore an Example Plot")
-fig = go.Figure()
-fig.add_trace(go.Scatter(x=["2023-01-01", "2023-01-02", "2023-01-03"], y=[100, 101, 102], mode='lines', name='Stock Price'))
-fig.update_layout(title='Example Stock Price Movement', xaxis_title='Date', yaxis_title='Price')
-st.plotly_chart(fig)
-
 # Call to Action
 st.markdown("**Ready to see the future of your favorite stocks? Select a stock ticker from the sidebar and let Stock Master do the rest!**")
